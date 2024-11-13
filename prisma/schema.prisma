@@ -25,13 +25,3 @@ model Admin {
   criadoEm     DateTime @default(now())
   atualizadoEm DateTime @updatedAt
 }
-
-model Conteudo {
-  id           Int      @id @default(autoincrement())
-  titulo       String
-  descricao    String
-  tipo         String // Ex: "prevenção", "sintomas", "campanha"
-  isActive     Boolean  @default(true)
-  criadoEm     DateTime @default(now())
-  atualizadoEm DateTime @updatedAt
-}
