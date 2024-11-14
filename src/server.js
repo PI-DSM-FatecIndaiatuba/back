@@ -1,6 +1,12 @@
 import express from 'express';
 import usuarioInteresseRoutes from './routes/usuarioInteresseRoutes.js';
+import cors from 'cors';
 
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type']
+}));
 const app = express();
 app.use(express.json());
 
