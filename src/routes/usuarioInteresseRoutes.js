@@ -5,7 +5,7 @@ import adminMiddleware from '../middlewares/adminMiddleware.js';
 const router = express.Router();
 
 router.post('/usuarios-interesse', usuarioInteresseController.cadastrarUsuario);
-router.get('/usuarios-interesse', adminMiddleware, usuarioInteresseController.listarUsuarios);
+router.get('/usuarios-interesse',  usuarioInteresseController.listarUsuarios);
 router.put('/usuarios-interesse/:id', usuarioInteresseController.atualizarUsuario);
 router.delete('/usuarios-interesse/:id', usuarioInteresseController.deletarUsuario);
 
