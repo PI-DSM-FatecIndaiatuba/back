@@ -11,7 +11,26 @@ model UsuarioInteresse {
   id           Int      @id @default(autoincrement())
   nome         String
   email        String   @unique
-  preferencia  String?
+  preferencia  String
+  isAdmin      Boolean  @default(false) // Indica se o usuário é admin
+  criadoEm     DateTime @default(now())
+  atualizadoEm DateTime @updatedAt
+}
+
+model Admin {
+  id           Int      @id @default(autoincrement())
+  nome         String
+  email        String   @unique
+  isActive     Boolean  @default(true) // Controle de status do admin
+  criadoEm     DateTime @default(now())
+  atualizadoEm DateTime @updatedAt
+}
+
+model Feedback {
+  id           Int      @id @default(autoincrement())
+  usuarioId    Int?
+  conteudo     String
+  status       String   @default("Pendente") // Status inicial dos feedbacks
   criadoEm     DateTime @default(now())
   atualizadoEm DateTime @updatedAt
 }
