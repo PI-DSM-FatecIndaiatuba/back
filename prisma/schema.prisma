@@ -28,7 +28,6 @@ model Admin {
 
 model Feedback {
   id           Int      @id @default(autoincrement())
-  usuarioId    Int?
   conteudo     String
   status       String   @default("Pendente") // Status inicial dos feedbacks
   criadoEm     DateTime @default(now())
