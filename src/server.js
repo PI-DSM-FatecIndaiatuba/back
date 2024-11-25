@@ -5,7 +5,11 @@ import cors from 'cors';
 
 const app = express();
 
-const allowedOrigins = ['http://localhost:3001', 'http://localhost:3000']; // Adicione os domínios necessários
+const allowedOrigins = [
+  'http://localhost:3001',
+  'http://localhost:3000',
+  'https://pi-front-2-gzop.vercel.app/',
+]; // Adicione os domínios necessários
 
 const corsOptions = {
   origin: (origin, callback) => {
