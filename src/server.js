@@ -9,6 +9,7 @@ const allowedOrigins = [
   'http://localhost:3001',
   'http://localhost:3000',
   'https://pi-front-2-gzop.vercel.app/',
+  'https://front-real-blond.vercel.app/',
 ]; // Adicione os domínios necessários
 
 const corsOptions = {
