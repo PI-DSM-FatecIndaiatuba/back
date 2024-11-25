@@ -5,13 +5,23 @@ import cors from 'cors';
 
 const app = express();
 
-app.use(
-  cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
-  }),
-);
+const allowedOrigins = [
+  'http://localhost:3001',
+  'http://localhost:3000',
+  'https://pi-front-2-gzop.vercel.app/',
+]; // Adicione os domínios necessários
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Usar as rotas de usuario de interesse
